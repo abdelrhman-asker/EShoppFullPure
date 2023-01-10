@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.FirstHomeDiv .FirstMapDiv, .FirstHomeDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: rgb(31, 31, 31);
+  color: rgb(173, 173, 173) !important;
+}
+
+.FirstHomeDiv {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  overflow-x: hidden;
+  gap: 20px;
+}
+.FirstHomeDiv .FirstMapDiv {
+  width: 25%;
+  flex-direction: column;
+  border: 2px solid rgb(173, 173, 173);
+  border-radius: 20px;
+  padding: 20px 10px;
+}
+.FirstHomeDiv button {
+  background-color: gray;
+  color: rgba(232, 232, 232, 0.853);
+  padding: 7px 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1px) and (max-width: 771px) {
+  .FirstHomeDiv .FirstMapDiv {
+    width: 80%;
+  }
+}/*# sourceMappingURL=Syle.css.map */

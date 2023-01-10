@@ -1,0 +1,312 @@
+$MainBackGround: rgb(31, 31, 31);
+$Typing: rgb(173, 173, 173);
+$buttonsBg: gray;
+$buttonTyping: rgba(232, 232, 232, 0.853);
+$buttonTypingBold: bold;
+$boderSmall: 5px;
+$boderMedi: 15px;
+$boderBig: 30px;
+$warningColor: rgba(255, 78, 47, 0.708);
+$transition: 1s;
+$bluing: rgba(0, 0, 109, 0.505);
+
+@function ConvertToRem($px) {
+  $rem: $px/16;
+  @return $rem + rem;
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+%flexing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  margin: 15vh 0 0 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $MainBackGround;
+  color: $Typing !important;
+}
+
+.FirstHomeDiv {
+  @extend %flexing;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  overflow-x: hidden;
+  gap: 20px;
+  .FirstMapDiv {
+    @extend %flexing;
+    width: 25%;
+    flex-direction: column;
+    border: 2px solid $Typing;
+    border-radius: 20px;
+    padding: 0px 0px 10px;
+    overflow: hidden;
+    position: relative;
+    .ProdImages {
+      max-width: 400px !important;
+      min-width: 400px;
+      min-height: 250px;
+      max-height: 250px;
+      border-radius: 20px 20px 0 0;
+      margin-bottom: 20px;
+      transition: 1s;
+    }
+    .ImgDiv:hover .ProdImages {
+      transform: scale(1.1);
+    }
+
+    .IconIntoImage {
+      display: none;
+      position: absolute;
+      right: 5%;
+      top: 8%;
+      font-weight: bold;
+      filter: drop-shadow(3px 3px 5px black);
+    }
+    .ImgDiv {
+      cursor: pointer;
+    }
+    .ImgDiv:hover .IconIntoImage {
+      display: block;
+    }
+    .Sale {
+      color: White;
+      background-color: red;
+      position: absolute;
+      top: 10px;
+      border-radius: 15px;
+      padding: 5px;
+      font-weight: bold;
+      -webkit-transform: rotate(-40deg);
+    }
+    h3 {
+      color: white;
+    }
+    .ProDesc {
+      font-size: 16px;
+      color: rgb(170, 170, 170);
+    }
+  }
+  button {
+    background-color: $buttonsBg;
+    color: $buttonTyping;
+    padding: 7px 10px;
+    border-radius: $boderMedi;
+    font-weight: $buttonTypingBold;
+    font-size: ConvertToRem(16);
+    cursor: pointer;
+    transition: $transition;
+  }
+  button:hover {
+    background-color: $Typing;
+    color: $MainBackGround;
+  }
+  .AllPriceAndCart {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around !important;
+  }
+  .despri h5 {
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+  }
+  .PreDesc h5::before {
+    content: "";
+    height: 4px;
+    top: 50%;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    background-color: rgba(171, 0, 0, 0.784);
+    transform: translate(50%, -50%);
+    transform: rotate(-30deg);
+  }
+}
+
+.MainNav {
+  z-index: 999;
+  background-color: $MainBackGround !important;
+  width: 100vw;
+
+  padding: 2.5vh 10vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  .CartBadge {
+    display: flex;
+    flex-direction: row;
+  }
+  .CartBadge svg {
+    font-size: 26px;
+  }
+  .CartBadge span {
+    color: $warningColor;
+    font-size: 16px;
+    padding-bottom: 0;
+    margin-top: -10px;
+    background-color: $Typing;
+  }
+}
+.PopUpImgDiv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background-color: rgba(255, 255, 255, 0.192);
+}
+.IconIntoImagePop {
+  position: fixed;
+  top: 18vh;
+  right: 32vw;
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 99999999;
+}
+.PopUpImg {
+  width: 40vw;
+  height: 80vh;
+  top: 15vh;
+  left: 30vw;
+  z-index: 5;
+  position: fixed;
+  border-radius: 15px;
+  z-index: 9999999;
+}
+.BeforeMapingCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100vw;
+  overflow-x: hidden;
+  .TotalPri {
+    position: fixed;
+    top: 11vh;
+    right: 0;
+    padding: 5px 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.585);
+    border-radius: 15px 0 0 15px;
+  }
+  .TotalPri h4 {
+    padding: 0;
+    margin: 0;
+  }
+}
+.FirstCartSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85vw !important;
+  margin: auto;
+  border: 5px solid $bluing;
+  border-radius: 25px;
+  overflow: hidden;
+  gap: 50px;
+  .leftSec{
+    width: 700px;
+    height: 300px;
+  }
+  .CartImages {
+    width: 100%;
+    height: 100%;
+  }
+  .rightSec {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding-right: 10px;
+  }
+  .DeleteAll {
+    color: White;
+    background-color: $warningColor;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer !important;
+
+    .DeleteAllText {
+      padding: 0 !important;
+      margin: 0 !important;
+      font-weight: bold;
+      color: black !important;
+    }
+  }
+  .QuaMoreAndLess {
+    @extend %flexing;
+    justify-content: start;
+    gap: 5px;
+  }
+  .QuaMoreAndLess h4 {
+    text-align: center;
+    text-justify: center;
+  }
+  .QuaMoreAndLess button {
+    background-color: white;
+    color: $bluing;
+    font-size: 28px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    cursor: pointer !important;
+  }
+}
+@media screen and (min-width: 771px) and (max-width: 991px) {
+  .FirstHomeDiv {
+    .FirstMapDiv {
+      width: 45%;
+    }
+  }
+  .CartImages {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1px) and (max-width: 771px) {
+  .FirstHomeDiv {
+    .FirstMapDiv {
+      width: 80%;
+    }
+  }
+
+  .IconIntoImagePop {
+    right: 10vw;
+  }
+  .PopUpImg {
+    width: 90vw;
+    left: 5vw;
+  }
+  .FirstCartSection {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw !important;
+    padding-bottom: 10px;
+    gap: 20px;
+    .rightSec {
+      align-items: center;
+      width: 100% !important;
+    }
+    .leftSec {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .CartImages {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}

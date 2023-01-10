@@ -1,0 +1,114 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "IPhone 14 ProMax",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907.jpg.og.jpg",
+      "Pre_price": 1200,
+      "New_price": 1100,
+      "Discount":false
+    },
+    {
+      "id": "2",
+      "title": "MaxBook Air M2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/macbook-pro-14-and-16_overview__fz0lron5xyuu_og.png",
+      "Pre_price": 2200,
+      "New_price": 2000,
+      "Discount":false
+    },
+    {
+      "id": "3",
+      "title": "Nikon Camera",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/istockphoto-477630708-612x612.jpg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "4",
+      "title": "Fourth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/photo-1505740420928-5e560c06d30e.jpeg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "5",
+      "title": "Fifth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/photo-1523275335684-37898b6baf30.jpeg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "6",
+      "title": "Sixth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/alex-motoc-0POwK6iAiRQ-unsplash.jpg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "7",
+      "title": "Seventh Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "productsimages/giorgio-trovato-K62u25Jk6vo-unsplash.jpg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "8",
+      "title": "Eighth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "/productsimages/kiran-ck-LSNJ-pltdu8-unsplash.jpg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "9",
+      "title": "Ninth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "/productsimages/alexunder-hess-bWZAPKm0zZE-unsplash.jpg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "10",
+      "title": "Tenth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "/productsimages/irene-kredenets-dwKiHoqqxk8-unsplash.jpg",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    },
+    {
+      "id": "10",
+      "title": "Tenth Project",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto facere vero consectetur itaque molestiae perspiciatis porro alias iure exercitationem quibusdam?",
+      "link": "https://modest-ramanujan-f625b4.netlify.app/",
+      "photo": "/productsimages/Tap-Products-BusinessCard-Black1_720x.webp",
+      "Pre_price": 5,
+      "New_price": 5,
+      "Discount":false
+    }
+  ]
+}
