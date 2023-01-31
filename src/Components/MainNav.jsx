@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -16,21 +16,27 @@ import {
   MDBBadge,
 } from "mdb-react-ui-kit";
 import { dataContext } from "../Context/Store";
-import { BsCartDash, BsFillCartCheckFill } from 'react-icons/bs';
-import { Link } from "react-router-dom";
+import { BsCartDash, BsFillCartCheckFill } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function MainNav() {
   const [showBasic, setShowBasic] = useState(false);
   const { cart } = useContext(dataContext);
 
+
   return (
-    <MDBNavbar className="MainNav" expand="lg" dark bgColor="dark">
+    <MDBNavbar
+      className="MainNav"
+      expand="lg"
+      dark
+      bgColor="dark"
+    >
       <MDBContainer fluid>
-        <MDBNavbarBrand >
-          <Link to="/">
-          Brand Name/Logo
+        <MDBNavbarBrand>
+          <Link className="btne /" to="/">
+            Brand Name/Logo
           </Link>
-          </MDBNavbarBrand>
+        </MDBNavbarBrand>
 
         <MDBNavbarToggler
           aria-controls="navbarSupportedContent"
@@ -44,7 +50,11 @@ export default function MainNav() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink href="#">All Products</MDBNavbarLink>
+              <MDBNavbarLink className="NavLink">
+                <Link className="btne /AllProducts" to="/AllProducts">
+                  All Products
+                </Link>
+              </MDBNavbarLink>
             </MDBNavbarItem>
 
             <MDBNavbarItem>
@@ -53,13 +63,13 @@ export default function MainNav() {
                   Categories
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
-                  <MDBDropdownItem href="/Home" link>
+                  <MDBDropdownItem href="/" link>
                     Men
                   </MDBDropdownItem>
-                  <MDBDropdownItem href="/Home" link>
+                  <MDBDropdownItem href="/" link>
                     Women
                   </MDBDropdownItem>
-                  <MDBDropdownItem href="/Home" link>
+                  <MDBDropdownItem href="/" link>
                     Sporting Equipments
                   </MDBDropdownItem>
                 </MDBDropdownMenu>
@@ -68,8 +78,13 @@ export default function MainNav() {
           </MDBNavbarNav>
 
           <div className="CartBadge">
-            <Link to="/Cart">{cart.items.length === 0 ?  <BsCartDash /> : <BsFillCartCheckFill/>}
-            
+            <Link to="/Cart">
+              {cart.items.length === 0 ? (
+                <BsCartDash />
+              ) : (
+                <BsFillCartCheckFill />
+              )}
+
               <MDBBadge color="gray" notification pill>
                 {cart.items.length === 0 ? (
                   <span> empty </span>

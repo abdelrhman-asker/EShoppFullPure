@@ -3,8 +3,10 @@ import { BsArrowsFullscreen } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { dataContext } from "../Context/Store";
 import "../Syle.scss";
+import { Link } from "react-router-dom";
 const MainHome = () => {
   const { products } = useContext(dataContext);
+  console.log(products)
   const { AddCartTotalPrice } = useContext(dataContext);
   const { cart } = useContext(dataContext);
   // console.log("Cart",cart)
@@ -48,27 +50,32 @@ const MainHome = () => {
                 <h4 className="Sale">Sale</h4>
               ) : null}
             </div>
-            <div>
-              <h3>{products.title}</h3>
-            </div>
+            <Link className="MoreDet" to={`/${products.id}`}>
+              More details
+            </Link>
             <div className="ProDesc">{products.description}</div>
             {products.Discount === true ? (
               <div className="AllPriceAndCart">
-
                 <div>
                   <button onClick={() => AddCartTotalPrice(products)}>
                     Add to Cart
                   </button>
                 </div>
-                <div className="despri PreDesc"><h5>{products.Pre_price} $</h5></div>
-                <div className="despri newDesc"><h5>{products.New_price} $</h5></div>
+                <div className="despri PreDesc">
+                  <h5>{products.Pre_price} $</h5>
+                </div>
+                <div className="despri newDesc">
+                  <h5>{products.New_price} $</h5>
+                </div>
               </div>
             ) : (
               <div className="AllPriceAndCart">
                 <button onClick={() => AddCartTotalPrice(products)}>
                   Add to Cart
                 </button>
-                <div className="despri newDesc"><h5>{products.New_price} $</h5></div>
+                <div className="despri newDesc">
+                  <h5>{products.New_price} $</h5>
+                </div>
               </div>
             )}
           </div>
@@ -86,7 +93,6 @@ const MainHome = () => {
           />
         </div>
       ) : null}
-      
     </div>
   );
 };
