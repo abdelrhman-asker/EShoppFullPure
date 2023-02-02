@@ -85,7 +85,7 @@ const Details = () => {
                 </div>
               </div>
             ) : (
-              <div className="AllPriceAndCart">
+              <div className="AllPriceAndCart col-12">
                 <button onClick={() => AddCartTotalPrice(products[id])}>
                   Add to Cart
                 </button>
