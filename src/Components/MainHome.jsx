@@ -83,14 +83,14 @@ const MainHome = () => {
       })}
       {visibleNow.images && visibleNow.images.length > 0 ? (
         <div>
-          <div className="PopUpImgDiv" onClick={removePopUp} />
+          <div className="PopUpImgDiv " onClick={removePopUp} />
 
-          <AiOutlineClose className="IconIntoImagePop" onClick={removePopUp} />
           <img
             src={visibleNow.images[visibleNow.images.length - 1]}
-            className="PopUpImg"
+            className="PopUpImg col-11 col-lg-7"
             alt="SelectedImg"
           />
+          <AiOutlineClose className="IconIntoImagePop" onClick={removePopUp} />
         </div>
       ) : null}
     </div>

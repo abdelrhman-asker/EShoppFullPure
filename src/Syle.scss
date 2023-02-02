@@ -202,16 +202,16 @@ body {
 .IconIntoImagePop {
   position: fixed;
   top: 18vh;
-  right: 32vw;
+  right: 25vw;
   font-size: 38px;
   cursor: pointer;
   z-index: 99999999;
 }
 .PopUpImg {
-  width: 40vw;
   height: 80vh;
-  top: 15vh;
-  left: 30vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 5;
   position: fixed;
   border-radius: 15px;
@@ -327,12 +327,9 @@ body {
   }
 
   .IconIntoImagePop {
-    right: 10vw;
+    right: 8vw;
   }
-  .PopUpImg {
-    width: 90vw;
-    left: 5vw;
-  }
+  
   .FirstCartSection {
     justify-content: center;
     align-items: center;

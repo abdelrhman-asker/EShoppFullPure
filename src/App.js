@@ -13,11 +13,12 @@ import {
 import Cart from "./Components/Cart";
 import Details from "./Components/Details";
 import AllProducts from "./Components/AllProducts";
-import { dataContext } from "./Context/Store";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 const App = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <MainNav />
       <Routes>
         <Route path="/" element={<MainHome />} />
