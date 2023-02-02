@@ -4,11 +4,12 @@ import { useParams } from "react-router-dom";
 import { dataContext } from "../Context/Store";
 
 const Details = () => {
-  const { products } = useContext(dataContext);
-  const { id } = useParams();
+
+  const {products,AddCartTotalPrice } = useContext(dataContext);
+  let { id } = useParams();
   console.log(id);
   console.log(products);
-
+  id = id-1
   let countDownDate = new Date("Jan 1, 2024 12:00:00").getTime();
   const Counting = setInterval(() => {
     let now = new Date().getTime();
@@ -28,6 +29,11 @@ const Details = () => {
       }
     }
   }, 1000);
+  // if (products[id].New_price === products[id].Pre_price) {
+  //   products[id].Discount = false;
+  // } else {
+  //   products[id].Discount = true;
+  // }
   return (
     <div className="MainDetails">
       <div className="MovingBar">
@@ -36,6 +42,62 @@ const Details = () => {
           <span id="Spanning"></span>
         </h4>
       </div>
+      {products.length > 0 ?
+      
+    
+      <div className="MainSectionOnDetails">
+        <div className="RecDesigning"></div>
+        <div className="RecDesigning2"></div>
+        <div className="LeftDetails col-10 col-lg-5">
+          <div className="LeftDetailsImgDiv">
+            <img src={products[id].photo} alt="ProductImg" />
+          </div>
+        </div>
+        <div className="rightDetails col-10 col-lg-6">
+          <h4>
+            {products[id].title}
+            {/* {products[id].Discount === true ? <span className="DetailsOnDetails">  On Sale</span> : null} */}
+          </h4>
+          <h5>
+          <span>Details :-
+            <hr className="col-2" />
+          </span>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum consequuntur placeat harum minima voluptatibus. Provident illo iste officiis sequi laborum, tempore odio culpa perspiciatis quaerat! Repellat quod at corporis velit.
+          </h5>
+          {products[id].Discount === true ? (
+              <div className="AllPriceAndCart col-12">
+                <div>
+                  <button onClick={() => AddCartTotalPrice(products[id])}>
+                    Add to Cart
+                  </button>
+                </div>
+                <div className="despri PreDesc">
+                  <span>
+                    From
+                  </span>
+                  <h5>{products[id].Pre_price} $</h5>
+                </div>
+                <div className="despri newDesc">
+                   <span>
+                    To
+                  </span>
+                  <h5>{products[id].New_price} $</h5>
+                </div>
+              </div>
+            ) : (
+              <div className="AllPriceAndCart">
+                <button onClick={() => AddCartTotalPrice(products[id])}>
+                  Add to Cart
+                </button>
+                <div className="despri newDesc">
+                  <h5>{products[id].New_price} $</h5>
+                </div>
+              </div>
+            )}
+        </div>
+      </div>
+      : null
+    }
     </div>
   );
 };
