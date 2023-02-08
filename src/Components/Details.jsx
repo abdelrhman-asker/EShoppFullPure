@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { useParams } from "react-router-dom";
 import { dataContext } from "../Context/Store";
 
@@ -11,7 +10,7 @@ const Details = () => {
   console.log(products);
   id = id-1
   let countDownDate = new Date("Jan 1, 2024 12:00:00").getTime();
-  const Counting = setInterval(() => {
+  setInterval(() => {
     let now = new Date().getTime();
     let timeLeft = countDownDate - now;
     let days = Math.floor(timeLeft / (24 * 60 * 60 * 1000));
@@ -90,7 +89,7 @@ const Details = () => {
                   Add to Cart
                 </button>
                 <div className="despri newDesc">
-                  <h5>{products[id].New_price} $</h5>
+                  <h5>Price: {products[id].New_price} $</h5>
                 </div>
               </div>
             )}

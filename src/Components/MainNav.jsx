@@ -20,10 +20,12 @@ import { BsCartDash, BsFillCartCheckFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function MainNav() {
-  const [showBasic, setShowBasic] = useState(false);
+  let [showBasic, setShowBasic] = useState(false);
   const { cart } = useContext(dataContext);
 
-
+const makeitflaseAgain = () => {
+  setShowBasic(true)
+}
   return (
     <MDBNavbar
       className="MainNav"
@@ -44,7 +46,13 @@ export default function MainNav() {
           aria-label="Toggle navigation"
           onClick={() => setShowBasic(!showBasic)}
         >
+          <div onClick={makeitflaseAgain} className={showBasic === true? "makeitblock" : "makeitnone"}></div>
           <MDBIcon icon="bars" fas />
+          <MDBBadge color="gray" notification pill>
+                {cart.items.length !== 0 && (
+                   <span className="TogglerAdv"> {cart.items.length}</span>
+                ) }
+              </MDBBadge>
         </MDBNavbarToggler>
 
         <MDBCollapse navbar show={showBasic}>
@@ -78,7 +86,7 @@ export default function MainNav() {
           </MDBNavbarNav>
 
           <div className="CartBadge">
-            <Link to="/Cart">
+            <Link style={{width:"100%"}} to="/Cart">
               {cart.items.length === 0 ? (
                 <BsCartDash />
               ) : (

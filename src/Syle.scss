@@ -46,16 +46,17 @@ body {
   gap: 20px;
   .FirstMapDiv {
     @extend %flexing;
-    width: 25%;
     flex-direction: column;
     border: 2px solid $Typing;
     border-radius: 20px;
     padding: 0px 0px 10px;
     overflow: hidden;
     position: relative;
+    .ImgDiv{
+      width: 100%;
+    }
     .ProdImages {
-      max-width: 400px !important;
-      min-width: 400px;
+     width: 100%;
       min-height: 250px;
       max-height: 250px;
       border-radius: 20px 20px 0 0;
@@ -189,6 +190,28 @@ body {
   div{
   align-items: baseline !important;
   }
+  .TogglerAdv{
+    color: tomato;
+    font-size: 18px;
+    background-color: rgba(128, 128, 128, 0.374);
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: -500%;
+  }
+  .makeitblock {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #00000073;
+  }
+  .makeitnone {
+    display: none;
+  }
 }
 .PopUpImgDiv {
   width: 100vw;
@@ -196,26 +219,26 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 0;
   background-color: rgba(255, 255, 255, 0.192);
 }
 .IconIntoImagePop {
   position: fixed;
-  top: 18vh;
-  right: 25vw;
+  top: 25vh;
+  right: 28vw;
   font-size: 38px;
   cursor: pointer;
-  z-index: 99999999;
+  z-index: 2;
 }
 .PopUpImg {
-  height: 80vh;
+  height: 65vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
   position: fixed;
   border-radius: 15px;
-  z-index: 9999999;
+  z-index: 1;
 }
 .BeforeMapingCart {
   display: flex;
@@ -309,25 +332,16 @@ body {
   }
 }
 @media screen and (min-width: 771px) and (max-width: 991px) {
-  .FirstHomeDiv {
-    .FirstMapDiv {
-      width: 45%;
-    }
-  }
+ 
   .CartImages {
     width: 400px;
     height: 400px;
   }
 }
 @media screen and (min-width: 1px) and (max-width: 771px) {
-  .FirstHomeDiv {
-    .FirstMapDiv {
-      width: 80%;
-    }
-  }
-
+  
   .IconIntoImagePop {
-    right: 8vw;
+    right: 8%;
   }
   
   .FirstCartSection {
@@ -409,8 +423,7 @@ body {
     .LeftDetailsImgDiv img{
       width: 100%;
       border-radius: 25px;
-      min-height:50vh ;
-      max-height: 70vh;
+      max-height:50vh ;
       }
   }
   .rightDetails{

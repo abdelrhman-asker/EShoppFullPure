@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { dataContext } from "../Context/Store";
 import "../Syle.scss";
 import { Link } from "react-router-dom";
+import { Col, Row } from "reactstrap";
 const MainHome = () => {
   const { products } = useContext(dataContext);
   console.log(products)
@@ -38,7 +39,9 @@ const MainHome = () => {
           products.Discount = true;
         }
         return (
-          <div className="FirstMapDiv" key={products.id}>
+          <Col key={products.id} className="col-lg-3 col-md-4 col-9">
+
+          <div className="FirstMapDiv col-md-12" style={{textAlign:"center"}}>
             <div className="ImgDiv" onClick={() => OnclickingIt(products)}>
               <img
                 className="ProdImages"
@@ -79,6 +82,8 @@ const MainHome = () => {
               </div>
             )}
           </div>
+          </Col>
+
         );
       })}
       {visibleNow.images && visibleNow.images.length > 0 ? (
@@ -87,7 +92,7 @@ const MainHome = () => {
 
           <img
             src={visibleNow.images[visibleNow.images.length - 1]}
-            className="PopUpImg col-11 col-lg-7"
+            className="PopUpImg col-11 col-lg-6"
             alt="SelectedImg"
           />
           <AiOutlineClose className="IconIntoImagePop" onClick={removePopUp} />
