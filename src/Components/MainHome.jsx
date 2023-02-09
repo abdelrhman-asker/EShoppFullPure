@@ -39,7 +39,7 @@ const MainHome = () => {
           products.Discount = true;
         }
         return (
-          <Col key={products.id} className="col-lg-3 col-md-4 col-9">
+          <Col key={products.id} className="col-lg-3 col-md-4 col-10">
 
           <div className="FirstMapDiv col-md-12" style={{textAlign:"center"}}>
             <div className="ImgDiv" onClick={() => OnclickingIt(products)}>
@@ -92,7 +92,7 @@ const MainHome = () => {
 
           <img
             src={visibleNow.images[visibleNow.images.length - 1]}
-            className="PopUpImg col-11 col-lg-6"
+            className="PopUpImg col-10 col-lg-6"
             alt="SelectedImg"
           />
           <AiOutlineClose className="IconIntoImagePop" onClick={removePopUp} />

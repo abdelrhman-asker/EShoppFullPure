@@ -338,10 +338,14 @@ body {
     height: 400px;
   }
 }
-@media screen and (min-width: 1px) and (max-width: 771px) {
-  
+@media screen and (min-width: 1px) and (max-width: 991px) {
+  .PopUpImg {
+    height: 50vh;
+  }
   .IconIntoImagePop {
-    right: 8%;
+    right: 10%;
+    top: 27%;
+
   }
   
   .FirstCartSection {
@@ -357,14 +361,14 @@ body {
     }
     .leftSec {
       width: 100% !important;
-      height: 100% !important;
+      height: fit-content !important;
     }
     .CartImages {
-      width: 100% !important;
-      height: 100% !important;
+      height: 250px !important;
     }
   }
 }
+
 .MainDetails {
   margin-top: 10vh;
   width: 100vw;
@@ -424,6 +428,7 @@ body {
       width: 100%;
       border-radius: 25px;
       max-height:50vh ;
+      min-height: 30vh;
       }
   }
   .rightDetails{
