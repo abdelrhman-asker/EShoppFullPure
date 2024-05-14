@@ -11,21 +11,20 @@ export default function DataContextProvider(props) {
     });
   }, []);
 
+  let myInitialCart = JSON.parse(localStorage.getItem("myCart")) || [];
+  const [cart, setCart] = useState({
+    items: myInitialCart,
+    MainItems: 0,
+    TotalPrice: JSON.parse(localStorage.getItem("TotalPrice")) || 0,
+  });
+
   const CalculateNumb = (items) => {
-    localStorage.setItem('myCart', JSON.stringify(items));
+    localStorage.setItem("myCart", JSON.stringify(items));
     const MainItems = items.reduce((a, b) => a + b.qty, 0);
     const TotalPrice = items.reduce((a, b) => a + b.qty * b.New_price, 0);
     localStorage.setItem("TotalPrice", JSON.stringify(TotalPrice));
     return { MainItems, TotalPrice };
   };
-
-  let myInitialCart = JSON.parse(localStorage.getItem('myCart')) || [];
-  const [cart, setCart] = useState({
-    items: myInitialCart,
-    MainItems:0, 
-    TotalPrice: JSON.parse(localStorage.getItem('TotalPrice')) || 0,
-  });
-
 
   const AddCartTotalPrice = (product) => {
     const { items = [] } = cart;
@@ -46,12 +45,11 @@ export default function DataContextProvider(props) {
     });
   };
 
-
   const Removeitem = (product) => {
     const { items = [] } = cart;
     const productIndex = items.findIndex((item) => item.id === product.id);
     if (productIndex !== -1) {
-      items.splice(productIndex, 1)
+      items.splice(productIndex, 1);
     }
     const total = CalculateNumb(items);
     console.log("total", total);
@@ -65,9 +63,9 @@ export default function DataContextProvider(props) {
     const { items = [] } = cart;
     const productIndex = items.findIndex((item) => item.id === product.id);
     if (productIndex !== -1) {
-      items[productIndex].qty--
-      if( items[productIndex].qty <= 0 ){
-        items.splice(productIndex, 1)
+      items[productIndex].qty--;
+      if (items[productIndex].qty <= 0) {
+        items.splice(productIndex, 1);
       }
     }
     const total = CalculateNumb(items);
@@ -81,8 +79,7 @@ export default function DataContextProvider(props) {
     const { items = [] } = cart;
     const productIndex = items.findIndex((item) => item.id === product.id);
     if (productIndex !== -1) {
-      items[productIndex].qty++
-    
+      items[productIndex].qty++;
     }
     const total = CalculateNumb(items);
     console.log("total", total);
@@ -91,12 +88,29 @@ export default function DataContextProvider(props) {
       ...total,
     });
   };
-
-
+  const DarkMode = () => {
+    if (document.getElementsByClassName("Mui-checked")[0]) {
+      document.getElementsByClassName("DarkingALightning")[0].innerHTML =
+        "Light";
+      document.body.className = "lightMode";
+    } else {
+      document.getElementsByClassName("DarkingALightning")[0].innerHTML =
+        "Dark";
+      document.body.className = "DarkMode";
+    }
+  };
   return (
     <div>
       <dataContext.Provider
-        value={{ products, cart, AddCartTotalPrice,Removeitem ,DecreaseItem,IncreaseItem }}
+        value={{
+          products,
+          cart,
+          AddCartTotalPrice,
+          Removeitem,
+          DecreaseItem,
+          IncreaseItem,
+          DarkMode,
+        }}
       >
         {props.children}
       </dataContext.Provider>

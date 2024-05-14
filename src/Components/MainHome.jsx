@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "reactstrap";
 const MainHome = () => {
   const { products } = useContext(dataContext);
-  console.log(products)
+  console.log(products);
   const { AddCartTotalPrice } = useContext(dataContext);
   const { cart } = useContext(dataContext);
+  const { DarkMode } = useContext(dataContext);
+
   // console.log("Cart",cart)
   const [visibleNow, setvisibleNow] = useState({
     images: [],
@@ -29,9 +31,8 @@ const MainHome = () => {
 
     console.log("visibleNowOut", visibleNow);
   };
-
   return (
-    <div className="FirstHomeDiv">
+    <div className={"FirstHomeDiv"}>
       {products.map((products) => {
         if (products.New_price === products.Pre_price) {
           products.Discount = false;
@@ -40,50 +41,51 @@ const MainHome = () => {
         }
         return (
           <Col key={products.id} className="col-lg-3 col-md-4 col-10">
-
-          <div className="FirstMapDiv col-md-12" style={{textAlign:"center"}}>
-            <div className="ImgDiv" onClick={() => OnclickingIt(products)}>
-              <img
-                className="ProdImages"
-                src={products.photo}
-                alt="product_Photo"
-              />
-              <BsArrowsFullscreen className="IconIntoImage" />
+            <div
+              className="FirstMapDiv col-md-12"
+              style={{ textAlign: "center" }}
+            >
+              <div className="ImgDiv" onClick={() => OnclickingIt(products)}>
+                <img
+                  className="ProdImages"
+                  src={products.photo}
+                  alt="product_Photo"
+                />
+                <BsArrowsFullscreen className="IconIntoImage" />
+                {products.Discount === true ? (
+                  <h4 className="Sale">Sale</h4>
+                ) : null}
+              </div>
+              <Link className="MoreDet" to={`/${products.id}`}>
+                More details
+              </Link>
+              <div className="ProDesc">{products.description}</div>
               {products.Discount === true ? (
-                <h4 className="Sale">Sale</h4>
-              ) : null}
-            </div>
-            <Link className="MoreDet" to={`/${products.id}`}>
-              More details
-            </Link>
-            <div className="ProDesc">{products.description}</div>
-            {products.Discount === true ? (
-              <div className="AllPriceAndCart">
-                <div>
+                <div className="AllPriceAndCart">
+                  <div>
+                    <button onClick={() => AddCartTotalPrice(products)}>
+                      Add to Cart
+                    </button>
+                  </div>
+                  <div className="despri PreDesc">
+                    <h5>{products.Pre_price} $</h5>
+                  </div>
+                  <div className="despri newDesc">
+                    <h5>{products.New_price} $</h5>
+                  </div>
+                </div>
+              ) : (
+                <div className="AllPriceAndCart">
                   <button onClick={() => AddCartTotalPrice(products)}>
                     Add to Cart
                   </button>
+                  <div className="despri newDesc">
+                    <h5>{products.New_price} $</h5>
+                  </div>
                 </div>
-                <div className="despri PreDesc">
-                  <h5>{products.Pre_price} $</h5>
-                </div>
-                <div className="despri newDesc">
-                  <h5>{products.New_price} $</h5>
-                </div>
-              </div>
-            ) : (
-              <div className="AllPriceAndCart">
-                <button onClick={() => AddCartTotalPrice(products)}>
-                  Add to Cart
-                </button>
-                <div className="despri newDesc">
-                  <h5>{products.New_price} $</h5>
-                </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
           </Col>
-
         );
       })}
       {visibleNow.images && visibleNow.images.length > 0 ? (

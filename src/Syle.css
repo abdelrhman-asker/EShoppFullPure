@@ -3,7 +3,32 @@
   scroll-behavior: smooth;
 }
 
-h4, h3, h2, h1, h5, h6 {
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -64,7 +89,7 @@ body {
   cursor: pointer;
 }
 .FirstHomeDiv .FirstMapDiv .ImgDiv .Sale {
-  color: White;
+  color: rgb(173, 173, 173);
   background-color: red;
   position: absolute;
   top: 10px;
@@ -168,6 +193,28 @@ body {
 .MainNav div {
   align-items: baseline !important;
 }
+.MainNav .TogglerAdv {
+  color: tomato;
+  font-size: 18px;
+  background-color: rgba(128, 128, 128, 0.374);
+  padding: 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: -500%;
+}
+.MainNav .makeitblock {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.4509803922);
+}
+.MainNav .makeitnone {
+  display: none;
+}
 
 .PopUpImgDiv {
   width: 100vw;
@@ -176,20 +223,20 @@ body {
   top: 0;
   left: 0;
   z-index: 0;
-  background-color: rgba(255, 255, 255, 0.192);
+  background-color: rgba(255, 255, 255, 0.634);
 }
 
 .IconIntoImagePop {
   position: fixed;
   top: 25vh;
-  right: 25vw;
+  right: 28vw;
   font-size: 38px;
   cursor: pointer;
   z-index: 2;
 }
 
 .PopUpImg {
-  height: 55vh;
+  height: 65vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -197,6 +244,7 @@ body {
   position: fixed;
   border-radius: 15px;
   z-index: 1;
+  box-shadow: 0px 0px 100px 100px gray;
 }
 
 .BeforeMapingCart {
@@ -213,7 +261,7 @@ body {
   top: 11vh;
   right: 0;
   padding: 5px 20px;
-  color: white;
+  color: rgba(232, 232, 232, 0.853);
   background-color: rgba(0, 0, 0, 0.585);
   border-radius: 15px 0 0 15px;
 }
@@ -249,7 +297,6 @@ body {
   padding-right: 10px;
 }
 .FirstCartSection .DeleteAll {
-  color: White;
   background-color: rgba(255, 78, 47, 0.708);
   width: -moz-fit-content;
   width: fit-content;
@@ -261,7 +308,7 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   font-weight: bold;
-  color: black !important;
+  color: rgb(173, 173, 173) !important;
 }
 .FirstCartSection .QuaMoreAndLess {
   justify-content: start;
@@ -272,7 +319,7 @@ body {
   text-justify: center;
 }
 .FirstCartSection .QuaMoreAndLess button {
-  background-color: white;
+  background-color: rgb(173, 173, 173);
   color: rgba(0, 0, 109, 0.505);
   font-size: 28px;
   padding: 0px 20px;
@@ -299,9 +346,13 @@ body {
     height: 400px;
   }
 }
-@media screen and (min-width: 1px) and (max-width: 771px) {
+@media screen and (min-width: 1px) and (max-width: 991px) {
+  .PopUpImg {
+    height: 50vh;
+  }
   .IconIntoImagePop {
-    right: 8vw;
+    right: 10%;
+    top: 27%;
   }
   .FirstCartSection {
     justify-content: center;
@@ -317,11 +368,11 @@ body {
   }
   .FirstCartSection .leftSec {
     width: 100% !important;
-    height: 100% !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
   }
   .FirstCartSection .CartImages {
-    width: 100% !important;
-    height: 100% !important;
+    height: 250px !important;
   }
 }
 .MainDetails {
@@ -333,7 +384,7 @@ body {
 .MainDetails .MovingBar {
   background-color: goldenrod;
   padding: 20px 0;
-  color: #000;
+  color: rgba(0, 0, 109, 0.505);
   width: 250vw;
 }
 .MainDetails .MovingBar h4 {
@@ -384,8 +435,8 @@ body {
 .MainSectionOnDetails .LeftDetails .LeftDetailsImgDiv img {
   width: 100%;
   border-radius: 25px;
-  min-height: 50vh;
-  max-height: 70vh;
+  max-height: 50vh;
+  min-height: 30vh;
 }
 .MainSectionOnDetails .rightDetails {
   border: 3px solid black;

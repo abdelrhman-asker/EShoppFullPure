@@ -22,12 +22,12 @@ const Cart = () => {
               <div key={Maping.id} className="FirstCartSection">
                 <div className="leftSec">
                   <Link to={`/${Maping.id}`}>
-                  <img
-                    alt={`cartfirstitem`}
-                    className="CartImages"
-                    src={Maping.photo}
+                    <img
+                      alt={`cartfirstitem`}
+                      className="CartImages"
+                      src={Maping.photo}
                     />
-                    </Link>
+                  </Link>
                 </div>
                 <div className="rightSec">
                   <div>

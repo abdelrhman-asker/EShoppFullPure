@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import "./App.css";
 import MainHome from "./Components/MainHome";
 import MainNav from "./Components/MainNav";
 import {
@@ -18,7 +17,7 @@ import ScrollToTop from "./ScrollToTop/ScrollToTop";
 const App = () => {
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <MainNav />
       <Routes>
         <Route path="/" element={<MainHome />} />
